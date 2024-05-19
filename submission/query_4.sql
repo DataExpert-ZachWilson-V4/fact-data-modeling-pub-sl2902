@@ -14,7 +14,7 @@ date_list_int AS (
     CAST(
       SUM(
         CASE
-          WHEN CONTAINS(dates_active, sequence_date) THEN POW(2, 8 - DATE_DIFF('day', sequence_date, DATE('2023-01-07')))
+          WHEN CONTAINS(dates_active, sequence_date) THEN POW(2, 8 - DATE_DIFF('day', sequence_date, DATE))
           ELSE 0
         END
         ) AS SMALLINT) AS history_int
